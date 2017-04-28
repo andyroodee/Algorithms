@@ -3,9 +3,10 @@ using System.Collections.Generic;
 
 namespace Algorithms.Collections
 {
-    public class Bag<Item> : IEnumerable<Item>
+    public class Queue<Item> : IEnumerable<Item>
     {
         private Node first;
+        private Node last;
 
         private class Node
         {
@@ -21,13 +22,33 @@ namespace Algorithms.Collections
             return (Count == 0);
         }
 
-        public void Add(Item item)
+        public void Enqueue(Item item)
         {
-            Node oldFirst = first;
-            first = new Node();
-            first.item = item;
-            first.next = oldFirst;
+            Node oldLast = last;
+            last = new Node();
+            last.item = item;
+            last.next = null;
+            if (IsEmpty())
+            {
+                first = last;
+            }
+            else
+            {
+                oldLast.next = last;
+            }
             Count++;
+        }
+
+        public Item Dequeue()
+        {
+            Item item = first.item;
+            first = first.next;
+            Count--;
+            if (IsEmpty())
+            {
+                last = null;
+            }
+            return item;
         }
 
         private IEnumerator<Item> GetElements()

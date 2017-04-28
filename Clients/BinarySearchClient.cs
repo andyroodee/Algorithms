@@ -13,12 +13,12 @@ namespace Algorithms.Clients
 
             Array.Sort(whiteList);
 
-            int? key = null;
-            while ((key = StdIn.ReadInt()) != null)
+            int key;
+            while (StdIn.TryReadInt(out key))
             {
-                if (BinarySearch.Rank(key.Value, whiteList) == -1)
+                if (BinarySearch.Rank(key, whiteList) == -1)
                 {
-                    StdOut.PrintLine(key.Value);
+                    StdOut.PrintLine(key);
                 }
             }
         }

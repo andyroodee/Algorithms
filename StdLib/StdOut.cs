@@ -8,5 +8,15 @@ namespace Algorithms.StdLib
         {
             Console.WriteLine(val);
         }
+
+        public static void Print<T>(T val)
+        {
+            Console.Write(val);
+        }
+
+        public static void PrintFormat(string formatString, params object[] args)
+        {
+            Console.Write(string.Format(formatString, args));
+        }
     }
 }

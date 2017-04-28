@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Algorithms.Collections
 {
-    public class Bag<Item> : IEnumerable<Item>
+    public class Stack<Item> : IEnumerable<Item>
     {
         private Node first;
 
@@ -21,13 +21,21 @@ namespace Algorithms.Collections
             return (Count == 0);
         }
 
-        public void Add(Item item)
+        public void Push(Item item)
         {
             Node oldFirst = first;
             first = new Node();
             first.item = item;
             first.next = oldFirst;
             Count++;
+        }
+
+        public Item Pop()
+        {
+            Item item = first.item;
+            first = first.next;
+            Count--;
+            return item;
         }
 
         private IEnumerator<Item> GetElements()

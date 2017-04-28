@@ -37,8 +37,11 @@
   <ItemGroup>
     <Compile Include="Clients\BagClient.cs" />
     <Compile Include="Clients\BinarySearchClient.cs" />
+    <Compile Include="Clients\StackClient.cs" />
     <Compile Include="Collections\Bag.cs" />
+    <Compile Include="Collections\Stack.cs" />
     <Compile Include="Controller.cs" />
+    <Compile Include="Collections\Queue.cs" />
     <Compile Include="Searching\BinarySearch.cs" />
     <Compile Include="StdLib\In.cs" />
     <Compile Include="StdLib\StdIn.cs" />
