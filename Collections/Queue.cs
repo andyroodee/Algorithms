@@ -51,6 +51,11 @@ namespace Algorithms.Collections
             return item;
         }
 
+        public Item Peek()
+        {
+            return first.item;
+        }
+
         private IEnumerator<Item> GetElements()
         {
             for (Node x = first; x != null; x = x.next)
