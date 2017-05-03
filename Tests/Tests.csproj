@@ -48,8 +48,11 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="StackTest.cs" />
+    <Compile Include="Collections\BagTest.cs" />
+    <Compile Include="Collections\QueueTest.cs" />
+    <Compile Include="Collections\StackTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Searching\BinarySearchTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

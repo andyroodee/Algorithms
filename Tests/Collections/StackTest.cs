@@ -1,5 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Algorithms.Collections;
+﻿using Algorithms.Collections;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests
 {
@@ -32,7 +32,7 @@ namespace Tests
             Assert.AreEqual(stringStack.Pop(), "Goodbye!");
             Assert.IsTrue(stringStack.Count == 1);
 
-            stringStack.Pop();
+            Assert.AreEqual(stringStack.Pop(), "Hello!");
             Assert.IsTrue(stringStack.IsEmpty());
         }
 
@@ -40,19 +40,19 @@ namespace Tests
         public void Iteration()
         {
             // Build up a stack and then make sure foreach iteration works.
-            Stack<int> values = new Stack<int>();
+            Stack<int> stack = new Stack<int>();
             int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            for (int i = 0; i < numbers.Length; i++)
+            foreach (int num in numbers)
             {
-                values.Push(numbers[i]);
+                stack.Push(num);
             }
-            Assert.IsTrue(values.Count == numbers.Length);
+            Assert.IsTrue(stack.Count == numbers.Length);
 
-            int reverseIndex = numbers.Length - 1;
-            foreach (var val in values)
+            int lifoIndex = numbers.Length - 1;
+            foreach (int val in stack)
             {
-                Assert.AreEqual(val, numbers[reverseIndex]);
-                reverseIndex--;
+                Assert.AreEqual(val, numbers[lifoIndex]);
+                lifoIndex--;
             }
         }
     }

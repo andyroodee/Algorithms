@@ -1,19 +1,24 @@
-﻿namespace Algorithms.Searching
+﻿using System;
+using System.Collections.Generic;
+
+namespace Algorithms.Searching
 {
     public class BinarySearch
     {
-        public static int Rank(int key, int[] a)
+        public static int Rank<T>(T key, IList<T> data)
+            where T : IComparable<T>
         {
             int low = 0;
-            int high = a.Length - 1;
+            int high = data.Count - 1;
             while (low <= high)
             {
                 int mid = low + (high - low) / 2;
-                if (key < a[mid])
+                int compareResult = key.CompareTo(data[mid]);
+                if (compareResult < 0)
                 {
                     high = mid - 1;
                 }
-                else if (key > a[mid])
+                else if (compareResult > 0)
                 {
                     low = mid + 1;
                 }
