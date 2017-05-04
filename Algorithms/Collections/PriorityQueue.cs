@@ -12,27 +12,21 @@ namespace Algorithms.Collections
     public class PriorityQueue<Item>
         where Item : IComparable<Item>
     {
-        private Item[] heap = new Item[2];
+        private Item[] heap;
         private PriorityOrdering ordering;
 
         public int Count
         { get; private set; }
-
-        public PriorityQueue(PriorityOrdering ordering = PriorityOrdering.Greatest)
+                
+        public PriorityQueue(int initialCapacity = 1, PriorityOrdering ordering = PriorityOrdering.Greatest)
         {
+            heap = new Item[initialCapacity + 1];
             this.ordering = ordering;
         }
         
-        public PriorityQueue(int initialCapacity, PriorityOrdering ordering = PriorityOrdering.Greatest)
-            : this(ordering)
-        {
-            heap = new Item[initialCapacity + 1];
-        }
-        
         public PriorityQueue(ICollection<Item> keys, PriorityOrdering ordering = PriorityOrdering.Greatest)
-            : this(ordering)
+            : this(keys.Count + 1, ordering)
         {
-            heap = new Item[keys.Count + 1];
             foreach (Item item in keys)
             {
                 Insert(item);
