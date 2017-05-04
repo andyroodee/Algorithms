@@ -43,6 +43,7 @@
     <Compile Include="Clients\QueueClient.cs" />
     <Compile Include="Clients\StackClient.cs" />
     <Compile Include="Collections\Bag.cs" />
+    <Compile Include="Collections\PriorityQueue.cs" />
     <Compile Include="Collections\Stack.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Collections\Queue.cs" />
