@@ -9,8 +9,8 @@ namespace Algorithms.Collections
 
         private class Node
         {
-            public Item item;
-            public Node next;
+            public Item Item { get; set; }
+            public Node Next { get; set; }
         }
 
         public int Count
@@ -24,17 +24,15 @@ namespace Algorithms.Collections
         public void Add(Item item)
         {
             Node oldFirst = first;
-            first = new Node();
-            first.item = item;
-            first.next = oldFirst;
+            first = new Node { Item = item, Next = oldFirst };
             Count++;
         }
 
         private IEnumerator<Item> GetElements()
         {
-            for (Node x = first; x != null; x = x.next)
+            for (Node x = first; x != null; x = x.Next)
             {
-                yield return x.item;
+                yield return x.Item;
             }
         }
 

@@ -48,6 +48,7 @@
     <Compile Include="Controller.cs" />
     <Compile Include="Collections\Queue.cs" />
     <Compile Include="Searching\BinarySearch.cs" />
+    <Compile Include="Searching\BinarySearchTree.cs" />
     <Compile Include="StdLib\In.cs" />
     <Compile Include="StdLib\StdIn.cs" />
     <Compile Include="StdLib\StdOut.cs" />

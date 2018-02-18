@@ -16,7 +16,7 @@ namespace Algorithms.StdLib
 
         public static void PrintFormat(string formatString, params object[] args)
         {
-            Console.Write(string.Format(formatString, args));
+            Console.Write(formatString, args);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Tests.Collections
             Assert.IsTrue(intPQ.Count == 0);
             Assert.IsTrue(intPQ.IsEmpty());
 
-            int[] numbers = new int[] { 1, 2, 3, 4, 5 };
+            int[] numbers = { 1, 2, 3, 4, 5 };
 
             // The default priority ordering is Greatest, so we should get back the largest
             // element in Peek()
@@ -32,10 +32,10 @@ namespace Tests.Collections
         [TestMethod]
         public void PriorityQueueOrdering()
         {
-            string[] strings = new string[] { "A", "B", "C", "D", "E" };
+            string[] strings = { "A", "B", "C", "D", "E" };
 
             // Iterate through using Greatest ordering
-            PriorityQueue<string> maxPQ = new PriorityQueue<string>(strings, PriorityOrdering.Greatest);
+            PriorityQueue<string> maxPQ = new PriorityQueue<string>(strings);
             int index = strings.Length - 1;
             while (!maxPQ.IsEmpty())
             {
